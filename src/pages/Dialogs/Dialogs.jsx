@@ -1,24 +1,9 @@
-import { NavLink } from 'react-router-dom';
+import DialogItem from '../../components/Dialogs/DialogItem/DialogItem';
+import Message from '../../components/Dialogs/Message/Message';
 import style from './Dialogs.module.css'
 
-const DialogItem = (props) => {
-    let path = `/dialogs/${props.id}`;
-
-    return (
-        <div className={style.dialog}>
-            <NavLink to={path} >{props.name}</NavLink>
-        </div>
-    );
-}
-
-const Message = (props) => {
-    return (
-        <div className={style.message}>{props.message}</div>
-    );
-}
-
 const Dialogs = () => {
-
+    
     const dialogsData = [
         {
             id: 1,
@@ -32,7 +17,7 @@ const Dialogs = () => {
             id: 3,
             name: 'Dayana'
         }
-    ]
+    ];
 
     const postData = [
         {
@@ -47,19 +32,18 @@ const Dialogs = () => {
             id: 3,
             message: 'Hi, men!'
         }
-    ]
+    ];
+
+    const dialogs = dialogsData.map(d => <DialogItem name={d.name} id={d.id} />);
+    const messages = postData.map(p => <Message message={p.message} />);
 
     return (
         <div className={style.dialogs}>
             <div className={style.dialogsItems}>
-                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
-                <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
-                <DialogItem name={dialogsData[2].name} id={dialogsData[2].id} />
+                { dialogs }
             </div>
             <div className={style.messages}>
-                <Message message={postData[0].message} />
-                <Message message={postData[1].message} />
-                <Message message={postData[2].message} />
+                { messages }
             </div>
         </div>
     );

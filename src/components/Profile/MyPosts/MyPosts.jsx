@@ -19,7 +19,9 @@ const MyPosts = () => {
             message: 'Nice to meet you!',
             likesCount: 17
         }
-    ]
+    ];
+
+    const postElement = messageData.map(m => <Post message={m.message} like={m.likesCount} />);
 
     return (
             <div className={style.posts}>
@@ -32,9 +34,7 @@ const MyPosts = () => {
                     <button>Add post</button>
                     </div>
                 </div>
-                <Post message={messageData[0].message} like={messageData[0].likesCount} />
-                <Post message={messageData[1].message} like={messageData[1].likesCount} />
-                <Post message={messageData[2].message} like={messageData[2].likesCount} />
+                { postElement }
             </div>
     );
 }
