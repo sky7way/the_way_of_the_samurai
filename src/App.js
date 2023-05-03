@@ -8,17 +8,17 @@ import Music from './pages/Music/Music';
 import Settings from './pages/Settings/Settings';
 import Profile from './pages/Profile/Profile';
 
-const App = () => {
+const App = (props) => {
+
   return (
-    
     <div className="app-wrapper">
       <Header />
       <Router>
       <Navbar />
         <div className='myContent'>
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/dialogs" element={<Dialogs />} />
+            <Route path="/profile" element={<Profile messageData={props.messageData} />} />
+            <Route path="/dialogs" element={<Dialogs dialogsData={props.dialogsData} postData={props.postData} />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music /> } />
             <Route path="/settings" element={<Settings />} />
