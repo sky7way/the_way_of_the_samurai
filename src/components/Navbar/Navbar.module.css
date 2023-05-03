@@ -1,0 +1,23 @@
+.nav {
+    grid-area: nav;
+    background: greenyellow;
+    padding: 5px 5px 0 15px;
+  }
+
+a, a:link, a:visited  {
+  /* color: inherit; */
+  text-decoration: none;
+  /* display: inline-block; */
+}
+  
+/* a:focus {
+  outline-style: outset;
+}   */
+
+.item a{
+    color: azure;
+}  
+
+.item .active {
+  color:blue;
+}

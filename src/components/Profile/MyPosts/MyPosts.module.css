@@ -1,0 +1,26 @@
+.content {
+  grid-area: content;
+  background: green;
+}
+
+.img {
+  width: 1200px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.myPhoto {
+  width: 300px;
+}
+
+.posts {
+  padding: 10px;
+}
+
+.addButton {
+  margin-top: 10px;
+}
+
+.addText {
+  margin-top: 10px;
+}

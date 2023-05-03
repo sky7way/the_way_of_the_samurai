@@ -1,0 +1,15 @@
+.item {
+  color: aquamarine;
+}
+
+.item img {
+  width: 70px;
+  border-radius: 100%;
+  margin: 25px 0 0 10px;
+}
+
+.favorite {
+  color: crimson;
+  padding: 0 0 0 20px;
+}
+
