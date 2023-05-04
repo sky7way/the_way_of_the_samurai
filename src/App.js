@@ -1,4 +1,4 @@
-import {  BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
@@ -9,21 +9,19 @@ import Settings from './pages/Settings/Settings';
 import Profile from './pages/Profile/Profile';
 
 const App = (props) => {
-
   return (
     <div className="app-wrapper">
       <Header />
-      <Router>
       <Navbar />
         <div className='myContent'>
           <Routes>
             <Route path="/profile"
               element={<Profile 
-              state={props.state.profilePage} />} 
+              state={props.state.profilePage} addPost={props.addPost} />} 
             />
             <Route path="/dialogs" 
               element={<Dialogs 
-              state={props.state.messagesPage} />} 
+              state={props.state.messagesPage} addMessage={props.addMessage} />} 
             />
             <Route path="/news" 
               element={<News />} 
@@ -36,7 +34,6 @@ const App = (props) => {
             />
           </Routes>
         </div>
-      </Router>
     </div>
     
   );

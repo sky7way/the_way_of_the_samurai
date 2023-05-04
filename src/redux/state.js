@@ -15,6 +15,9 @@
 //         likesCount: 17
 //     }
 //   ];
+
+import { rerenderEntireTree } from "../render";
+
   
 //   const dialogsData = [
 //     {
@@ -108,5 +111,24 @@
             
         }
     };
+
+export const addPost = (postMessage) => {
+    const newPost =  {
+        id: 5,
+        message: postMessage,
+        likesCount: 0
+    };
+    state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state);
+};
+
+export const addMessage = (message) => {
+    const newMessage = {
+        id: 5,
+        message: message
+    };
+    state.messagesPage.messages.push(newMessage);
+    rerenderEntireTree(state);
+}
         
   export default state;
