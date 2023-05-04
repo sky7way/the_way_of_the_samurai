@@ -1,7 +1,7 @@
 .nav {
     grid-area: nav;
     background: greenyellow;
-    padding: 5px 5px 0 15px;
+    padding: 5px 5px 100px 15px;
   }
 
 a, a:link, a:visited  {
@@ -14,10 +14,18 @@ a, a:link, a:visited  {
   outline-style: outset;
 }   */
 
-.item a{
+.item {
+  padding-top: 15px;
+}
+
+.item a, .item_friends a{
     color: azure;
 }  
 
-.item .active {
+.item .active, .item_friends .active {
   color:blue;
+}
+
+.item_friends {
+  margin-top: 50px;
 }

@@ -4,8 +4,8 @@ import style from './Dialogs.module.css'
 
 const Dialogs = (props) => {
 
-    const dialogs = props.dialogsData.map(d => <DialogItem name={d.name} id={d.id} />);
-    const messages = props.postData.map(p => <Message message={p.message} />);
+    const dialogs = props.state.dialogs.map(d => <DialogItem name={d.name} photo={<img src={d.photo} alt='user avatar' />} id={d.id} />);
+    const messages = props.state.messages.map(p => <Message message={p.message} />);
 
     return (
         <div className={style.dialogs}>
